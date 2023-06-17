@@ -26,7 +26,7 @@ export const Container = styled.div<BackgroundColorType>`
 
     div{
         display: flex;
-        justify-content: space-between;
+        gap: 12.5rem;
         align-items: center;
 
         span{
