@@ -1,6 +1,6 @@
 import { Header } from "./Components/Header";
 import { Summary } from "./Components/Summary";
-import { SummarySearch } from "./Components/SummaryBody";
+import { SummarySearch } from "./Components/SummarySearch";
 
 function App() {
   return (
