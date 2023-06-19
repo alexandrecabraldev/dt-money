@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface BackgroundColorType{
-    colorBackground?: boolean;
+    bgcolor?: string;
 }
 
 export const ContainerSummary = styled.main`
@@ -18,7 +18,7 @@ export const Container = styled.div<BackgroundColorType>`
     flex-direction: column;
     padding: 1.5rem 2rem;
     
-    background-color: ${props=>props.colorBackground ? 
+    background-color: ${props=>props.bgcolor==="true" ? 
     props=>props.theme["green-dark"] : 
     props=>props.theme["gray-4"]};
 

@@ -6,10 +6,11 @@ import { ThemeGlobal } from './Components/Global/ThemeGlobal.ts'
 import { ThemeProvider } from 'styled-components'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <ThemeProvider theme={ThemeGlobal}>
-      <GlobalStyle/>
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
+    <React.StrictMode>
+      <ThemeProvider theme={ThemeGlobal}>
+        <GlobalStyle/>
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>
+
 )

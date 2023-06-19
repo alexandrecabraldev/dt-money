@@ -6,7 +6,7 @@ export function Header(){
         <Container>
             <header>
                 <ContentImageTitle>
-                    <img src="../../../public/igniteSimbol.svg" alt="" />
+                    <img src="../../../src/assets/igniteSimbol.svg" alt="" />
                     <h1>DT Money</h1>
                 </ContentImageTitle>
 

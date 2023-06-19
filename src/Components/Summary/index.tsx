@@ -17,19 +17,20 @@ export function Summary(){
 
             <Container>
                 <div>
-                    <span>Entradas</span>
+                    <span>Saídas</span>
                     <img src={ArrowDown} alt="" />
                 </div>
                 <TextValue>R$ 1.259,00</TextValue>
             </Container>
                 
-            <Container colorBackground>
+            <Container bgcolor="true">
                 <div>
-                    <span>Entradas</span>
+                    <span>Total</span>
                     <img src={Dollar} alt="" />
                 </div>
                 <TextValue>R$ 16.141,00</TextValue>
             </Container>
+
         </ContainerSummary>
         
     );
