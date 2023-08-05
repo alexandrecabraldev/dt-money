@@ -8,7 +8,7 @@ export const ContainerSummary = styled.main`
     max-width: 70rem;
     display:flex;
     justify-content: space-between;
-    margin: auto;
+    margin: -4rem auto 0;
 `;
 
 export const Container = styled.div<BackgroundColorType>`

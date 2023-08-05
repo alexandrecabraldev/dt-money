@@ -1,17 +1,61 @@
-import { Container } from "./styles";
+import { useState } from "react";
+import { ButtonDialog, Container, ContainerIncomeOutcome, Dialog, DialogBackground, ImageClose, Income, InputsDialog, Outcome } from "./styles";
 import { ContentImageTitle } from "./styles";
+import closeIcon from "../../assets/close.svg"
+import arrowUp  from "../../assets/arrowUp.svg"
+import arrowDown from "../../assets/arrowDown.svg"
 
 export function Header(){
-    return(
-        <Container>
-            <header>
-                <ContentImageTitle>
-                    <img src="../../../src/assets/igniteSimbol.svg" alt="" />
-                    <h1>DT Money</h1>
-                </ContentImageTitle>
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isIncomeActive, setIsIncomeActive] = useState(false);
+    const [isOutcomeActive, setIsOutcomeActive] = useState(false);
 
-                <button type="button">Nova Transação</button>
-            </header>
-        </Container>
+    function handleClick(){
+        setIsModalOpen(state=>!state);
+    }
+    
+    return(
+        <>
+            {
+                (isModalOpen) && 
+                <>
+                    <DialogBackground/>
+                    <Dialog open={isModalOpen}>
+                        <ImageClose src={closeIcon} alt="" onClick={handleClick}/>
+                        <h1>Nova transação</h1>
+                        <InputsDialog>
+                            <input type="text" placeholder="Descrição"/>
+                            <input type="text" placeholder="Preço"/>
+                            <input type="text" placeholder="Categoria"/>
+                        </InputsDialog>
+                        <ContainerIncomeOutcome>
+                            <Income>
+                                <img src={arrowUp} alt="" />
+                                Entrada
+                            </Income>
+    
+                            <Outcome>
+                                <img src={arrowDown} alt="" />
+                                Saída
+                            </Outcome>
+                        </ContainerIncomeOutcome>
+    
+                        <ButtonDialog>Cadastrar</ButtonDialog>
+                    </Dialog>
+                </>    
+            }
+            <Container>
+                <header>
+                    <ContentImageTitle>
+                        <img src="../../../src/assets/igniteSimbol.svg" alt="" />
+                        <h1>DT Money</h1>
+                    </ContentImageTitle>
+    
+                    <button type="button" onClick={handleClick}>Nova Transação</button>
+                </header>
+    
+            </Container>
+        </>
+
     );
 }

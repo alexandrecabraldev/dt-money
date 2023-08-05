@@ -6,7 +6,6 @@ export const Form = styled.form`
 
     max-width: 70rem;
     margin: 4rem auto 0;
-    display: flex;
     align-items: center;
 `;
 
@@ -37,12 +36,17 @@ export const Button = styled.button`
 
     font-size: 1rem;
     font-weight: 700;
-    
+    transition: 0.2s;
+
+    img{
+        transition: filter 0.2s;
+    }
+
     &:hover{
         background-color: ${props=>props.theme.green};
         color: ${props=>props.theme.white};
         border-color: ${props=>props.theme.green};
-        
+
         img {
             filter: brightness(0) invert(1);
         }

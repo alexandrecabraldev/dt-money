@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body{
     background-color: ${props=>props.theme["gray-2"]};
+    position: relative;
 }
 
 `;
