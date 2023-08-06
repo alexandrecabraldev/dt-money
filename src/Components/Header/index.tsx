@@ -13,6 +13,16 @@ export function Header(){
     function handleClick(){
         setIsModalOpen(state=>!state);
     }
+
+    function handleClickIncome(){
+        setIsIncomeActive(state=>!state)
+
+    }
+
+    function handleCickOutcome(){
+        setIsOutcomeActive(state=>!state)
+
+    }
     
     return(
         <>
@@ -29,12 +39,14 @@ export function Header(){
                             <input type="text" placeholder="Categoria"/>
                         </InputsDialog>
                         <ContainerIncomeOutcome>
-                            <Income>
+                            <Income onClick={handleClickIncome}
+                            isIncomeActive={isIncomeActive}>
                                 <img src={arrowUp} alt="" />
                                 Entrada
                             </Income>
     
-                            <Outcome>
+                            <Outcome onClick={handleCickOutcome} 
+                            isOutcomeActive={isOutcomeActive}>
                                 <img src={arrowDown} alt="" />
                                 Saída
                             </Outcome>

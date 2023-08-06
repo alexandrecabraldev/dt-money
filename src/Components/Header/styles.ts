@@ -104,9 +104,7 @@ export const IncomeOutcomeStyle = styled.div`
     gap: 0.5rem;
     flex: 1;
     padding: 1rem 3.875rem;
-    background-color: ${props=>props.theme["gray-3"]};
     border-radius: 6px;
-    color: ${props=>props.theme["gray-6"]};
     font-size: 1rem;
     font-weight: 400;
     cursor: pointer;
@@ -117,7 +115,14 @@ export const IncomeOutcomeStyle = styled.div`
     }
 `;
 
-export const Income = styled(IncomeOutcomeStyle)`
+export const Income = styled(IncomeOutcomeStyle)<{isIncomeActive:boolean}>`
+
+    background-color:${props=>props.isIncomeActive ? props=>props.theme["green-dark"]: props=>props.theme["gray-3"]} ;
+    color: ${props=>props.isIncomeActive ? props=>props.theme.white : props=>props.theme["gray-6"]};
+
+    img{
+        filter: ${props=>props.isIncomeActive && 'brightness(0) invert(1)'};
+    }
 
     &:hover{
         background-color: ${props=>props.theme["green-dark"]};
@@ -129,7 +134,15 @@ export const Income = styled(IncomeOutcomeStyle)`
     }
 `;
 
-export const Outcome = styled(IncomeOutcomeStyle)`
+export const Outcome = styled(IncomeOutcomeStyle)<{isOutcomeActive:boolean}>`
+
+
+    background-color:${props=>props.isOutcomeActive ? props=>props.theme["red-dark"]: props=>props.theme["gray-3"]} ;
+    color: ${props=>props.isOutcomeActive ? props=>props.theme.white : props=>props.theme["gray-6"]};
+    
+    img{
+        filter: ${props=>props.isOutcomeActive && 'brightness(0) invert(1)'};
+    }
 
     &:hover{
         background-color: ${props=>props.theme["red-dark"]};
